@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+:root {
+    /* الوضع العادي (Light Mode) */
+    --primary-color: #2563EB;
+    --secondary-color: #4F46E5;
+    --background-color: #F9FAFB;
+    --text-color: #1F2937;
+    --accent-color: #10B981;
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
+    --error-color: #EF4444;
+
+    /* الوضع الداكن (Dark Mode) */
+    --primary-color-dark: #3B82F6;
+    --secondary-color-dark: #6366F1;
+    --background-color-dark: #1F2937;
+    --text-color-dark: #F9FAFB;
+    --accent-color-dark: #10B981;
+    --success-color-dark: #10B981;
+    --warning-color-dark: #F59E0B;
+    --error-color-dark: #EF4444;
+}
+
+* {
+    font-family: "Almarai", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* تطبيق الألوان بناءً على الوضع */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark-mode {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --success-color: var(--success-color-dark);
+    --warning-color: var(--warning-color-dark);
+    --error-color: var(--error-color-dark);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    /* Bold */
+}
+
+
+/* أمثلة على استخدام الألوان */
+button {
+    font-family: "Almarai", sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* تغيير لون الأزرار في الوضع الداكن */
+body.dark-mode .hero button {
+    background-color: #0099CC;
+    /* لون أزرق */
+    color: white;
+    /* لون النص أبيض */
+}
+
+body.dark-mode .hero button:hover {
+    background-color: #00B4FF;
+    /* لون أزرق داكن عند التحويم */
+}
+
+.alert-success {
+    background-color: var(--success-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-warning {
+    background-color: var(--warning-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-error {
+    background-color: var(--error-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* استثناء النافبار والفوتر من التغييرات */
+.navbar,
+.footer {
+    direction: ltr;
+    /* النص من اليسار لليمين */
+    text-align: left;
+    /* محاذاة النص لليسار */
+}
+
+/* محاذاة العناصر داخل النافبار */
+.navbar-container {
+    direction: ltr;
+    /* العناصر تبدأ من اليسار */
+}
+
+.navbar-menu {
+    margin-left: auto;
+    /* محاذاة القائمة لليسار */
+    margin-right: 0;
+    /* إزالة الهوامش الافتراضية */
+}
+
+.navbar-menu li {
+    margin-left: 1.5rem;
+    /* مسافة بين عناصر القائمة */
+    margin-right: 0;
+    /* إزالة الهوامش الافتراضية */
+}
+
+/* محاذاة العناصر داخل الفوتر */
+.footer {
+    direction: ltr;
+    /* العناصر تبدأ من اليسار */
+    text-align: left;
+    /* محاذاة النص لليسار */
+}
+
+
+
+/* استثناء روابط النافبار */
+.navbar-link {
+    color: white;
+    /* لون النص أبيض */
+    text-decoration: none;
+    /* إزالة الخط التحتي */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #FFA500;
+    /* لون الخط في الوضع العادي */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+    /* توسيع الخط عند التحويم */
+}
+
+/* التأكد من أن روابط النافبار لا تتأثر بالألوان العامة */
+.navbar-link,
+.navbar-link:visited,
+.navbar-link:hover {
+    color: white;
+    /* لون النص أبيض */
+}
+
+/* زيادة المسافة بين السطور في النصوص العامة */
+body {
+    line-height: 1.8;
+    /* زيادة المسافة بين السطور */
+}
+
+/* زيادة المسافة بين السطور في العناوين */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.5;
+    /* مسافة أقل بين سطور العناوين */
+}
+
+/* زيادة المسافة بين السطور في البطاقات */
+.course-card p {
+    line-height: 1.8;
+    /* زيادة المسافة بين السطور في وصف البطاقات */
+}
+
+/* زيادة المسافة بين السطور في القسم الترويجي (Hero Section) */
+.hero p {
+    line-height: 1.8;
+    /* زيادة المسافة بين السطور */
+}
+
+/* زيادة المسافة بين السطور في الفوتر */
+.footer p {
+    line-height: 1.8;
+    /* زيادة المسافة بين السطور */
+}

@@ -1,0 +1,621 @@
+/* القسم الترويجي */
+.hero {
+    background-color: #2563EB;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+    /* حواف دائرية من الأسفل */
+    margin-top: -20px;
+    /* تقريب السكشن من النافبار */
+    position: relative;
+    /* لإضافة تأثيرات إضافية إذا لزم الأمر */
+    z-index: 999;
+    /* التأكد من أن السكشن تحت النافبار */
+}
+
+/* إخفاء خلفية السكشن (Hero Section) في الوضع الداكن */
+body.dark-mode .hero {
+    background-color: transparent;
+    /* خلفية شفافة */
+}
+
+/* التأكد من أن جميع النصوص تأخذ اللون الجديد */
+body.dark-mode .hero,
+body.dark-mode .courses,
+body.dark-mode .features,
+body.dark-mode .blog,
+body.dark-mode .contact,
+body.dark-mode .footer {
+    color: #F9FAFB;
+    /* لون الخط رمادي فاتح */
+}
+
+/* تغيير لون العناوين في الوضع الداكن */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #F9FAFB;
+    /* لون العناوين رمادي فاتح */
+}
+
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #FF8C42;
+}
+
+/* الأقسام الأخرى */
+.courses,
+.features,
+.blog,
+.contact {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.courses h2,
+.features h2,
+.blog h2,
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+
+/* الفوتر */
+.footer {
+    background-color: #1F2937;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.footer a {
+    color: #FFA500;
+    text-decoration: none !important;
+}
+
+body.dark-mode .footer a {
+    color: #00B4FF;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries للتجاوب مع أحجام الشاشات */
+
+/* للأجهزة اللوحية (عرض أقل من 768px) */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        /* إخفاء قائمة الروابط */
+    }
+
+    .navbar-logo {
+        font-size: 1.5rem;
+        /* تقليل حجم الخط */
+    }
+
+    .navbar-theme-toggle {
+        width: 35px;
+        /* تقليل حجم الزر */
+        height: 35px;
+    }
+}
+
+/* للهواتف (عرض أقل من 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+        /* تقليل الحشو */
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
+        /* تقليل حجم الخط */
+    }
+
+    .navbar-theme-toggle {
+        width: 30px;
+        /* تقليل حجم الزر */
+        height: 30px;
+    }
+}
+
+.courses {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+
+.courses p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #4B5563;
+}
+
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* تنسيقات البطاقات في الوضع العادي */
+.course-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2563EB;
+}
+
+.course-card p {
+    font-size: 1rem;
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+}
+
+.course-button {
+    display: inline-block;
+    background-color: #2563EB;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.course-button:hover {
+    background-color: #1E40AF;
+}
+
+body.dark-mode .courses h2+p {
+    color: var(--text-color-dark);
+}
+
+/* تنسيقات البطاقات في الوضع الداكن */
+body.dark-mode .course-card {
+    background-color: #374151;
+    /* خلفية داكنة */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .course-card h3 {
+    color: #FFF;
+    /* لون العنوان أزرق فاتح */
+}
+
+body.dark-mode .course-card p {
+    color: #D1D5DB;
+    /* لون النص رمادي فاتح */
+}
+
+body.dark-mode .course-button {
+    background-color: #0099CC;
+    /* لون الزر أزرق فاتح */
+    color: white;
+}
+
+body.dark-mode .course-button:hover {
+    background-color: #00B4FF;
+    /* لون الزر أزرق داكن عند التحويم */
+}
+
+/* تنسيقات عامة لقسم المميزات */
+.features {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #2563EB;
+    /* لون الأيقونة */
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #4B5563;
+    line-height: 1.6;
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .feature-card {
+    background-color: #374151;
+    /* خلفية داكنة */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .feature-card i {
+    color: #00B4FF;
+}
+
+body.dark-mode .feature-card h3 {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .feature-card p {
+    color: #D1D5DB;
+}
+
+/* تنسيقات المدونة */
+.blog {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blog a {
+    --color: #0077ff;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+}
+
+.blog a:before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 30%;
+    transition: all 0.5s ease-in-out;
+}
+
+.blog a:hover {
+    color: white;
+}
+
+body.dark-mode .blog a:hover {
+    color: white;
+}
+
+.blog a:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+}
+
+.blog a:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+.blog h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1F2937;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+    text-align: right;
+}
+
+.post-content h3 {
+    font-size: 1.3rem;
+    color: #2563EB;
+    margin-bottom: 0.5rem;
+}
+
+.post-date {
+    color: #6B7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.post-content p {
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    padding-right: 0.5rem;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .blog-post {
+    background: #374151;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .post-content h3 {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .post-date {
+    color: #9CA3AF;
+}
+
+body.dark-mode .post-content p {
+    color: #D1D5DB;
+}
+
+body.dark-mode .read-more {
+    color: #00B4FF;
+}
+
+/* تنسيقات اتصل بنا */
+.contact {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1F2937;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #2563EB;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1E40AF;
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #1F2937;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #2563EB;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #2563EB;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1E40AF;
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .contact-form,
+body.dark-mode .contact-info {
+    background: #374151;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .form-group label {
+    color: #D1D5DB;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #4B5563;
+    border-color: #6B7280;
+    color: white;
+}
+
+body.dark-mode .info-item {
+    color: #D1D5DB;
+}
+
+body.dark-mode .info-item i {
+    color: #00B4FF;
+}
+
+body.dark-mode .social-links a {
+    color: #00B4FF;
+}
+
+body.dark-mode .social-links a:hover {
+    color: #0099CC;
+}
+
+body.dark-mode .submit-btn {
+    background-color: #00B4FF;
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #0099CC;
+}
+
+/* تجاوب للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-posts {
+        grid-template-columns: 1fr;
+    }
+}

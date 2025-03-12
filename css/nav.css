@@ -1,0 +1,186 @@
+:root {
+    /* الوضع العادي (Light Mode) */
+    --navbar-bg-light: #2563EB;
+    --navbar-text-light: white;
+    --navbar-underline-light: #FFA500;
+    /* لون الخط في الوضع العادي */
+
+    /* الوضع الداكن (Dark Mode) */
+    --navbar-bg-dark: #1F2937;
+    --navbar-text-dark: white;
+    --navbar-underline-dark: #00B4FF;
+    --navbar-underline-dark-2: #FF8C42;
+    /* لون الخط في الوضع الداكن */
+}
+
+/* تنسيقات عامة للنافبار */
+.navbar {
+    background-color: var(--navbar-bg-light);
+    /* لون النافبار الافتراضي */
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative; /* لجعل النافبار منفصلة عن السكشن */
+    z-index: 1000; /* التأكد من أن النافبار فوق العناصر الأخرى */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تنسيق الشعار */
+.navbar-logo {
+    color: var(--navbar-text-light);
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+.navbar-logo i {
+    margin-left: 0.5rem;
+    /* مسافة بين الأيقونة والنص */
+    font-size: 1.8rem;
+    color: #FFA500;
+    /* لون برتقالي للأيقونة */
+    padding-right: 2%;
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .navbar-logo {
+    color: var(--navbar-text-dark);
+}
+
+body.dark-mode .navbar-logo i {
+    color: #00B4FF;
+    /* لون أزرق فاتح للأيقونة في الوضع الداكن */
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .navbar {
+    background-color: var(--navbar-bg-dark);
+}
+
+body.dark-mode .navbar-logo,
+body.dark-mode .navbar-link {
+    color: var(--navbar-text-dark);
+}
+
+/* تنسيق قائمة الروابط */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1.5rem;
+}
+
+.navbar-link {
+    color: var(--navbar-text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    /* Medium */
+}
+
+/* التأكد من عدم ظهور الخط التحتي */
+.navbar-logo,
+.navbar-link,
+.navbar-logo:hover,
+.navbar-link:hover {
+    color: var(--navbar-text-light) !important;
+    text-decoration: none !important;
+    /* إزالة الخط التحتي عند التحويم */
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--navbar-underline-light);
+    /* لون الخط في الوضع العادي */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+    /* توسيع الخط عند الهافر */
+}
+
+/* تنسيقات الوضع الداكن */
+body.dark-mode .navbar-link {
+    color: var(--navbar-text-dark);
+}
+
+body.dark-mode .navbar-link::after {
+    background-color: var(--navbar-underline-dark);
+    /* لون الخط في الوضع الداكن */
+}
+
+
+/* تنسيق زر تبديل الوضع */
+
+.navbar-theme-toggle {
+    background-color: white;
+    /* خلفية بيضاء */
+    border: none;
+    border-radius: 50%;
+    /* حواف دائرية */
+    width: 40px;
+    /* عرض الزر */
+    height: 40px;
+    /* ارتفاع الزر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-theme-toggle i {
+    font-size: 1.2rem;
+    position: absolute;
+    /* لجعل الأيقونات تظهر في نفس المكان */
+    visibility: hidden;
+    /* إخفاء الأيقونات بشكل افتراضي */
+    transition: color 0.3s ease;
+    /* تأثير سلس لتغيير اللون */
+}
+
+.navbar-theme-toggle i.fa-sun {
+    color: #FFA500;
+    /* لون برتقالي للشمس */
+}
+
+.navbar-theme-toggle i.fa-moon {
+    color: #CCCCCC;
+    /* لون رمادي فاتح للقمر */
+}
+
+.navbar-theme-toggle i.active {
+    visibility: visible;
+    /* إظهار الأيقونة النشطة فقط */
+}
+
+/* تأثيرات عند التحويم */
+.navbar-theme-toggle:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
